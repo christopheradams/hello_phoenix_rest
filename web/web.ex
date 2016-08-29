@@ -58,6 +58,7 @@ defmodule HelloPhoenixRest.Web do
   def router do
     quote do
       use Phoenix.Router
+      use PhoenixRest.Router
     end
   end
 

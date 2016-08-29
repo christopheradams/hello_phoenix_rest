@@ -19,6 +19,11 @@ defmodule HelloPhoenixRest.Router do
     get "/", PageController, :index
   end
 
+  resource "/hello", HelloPhoenixRest.HelloResource
+  resource "/hello/:message", HelloPhoenixRest.MessageResource
+
+  forward "/api", HelloPhoenixRest.RestRouter
+
   # Other scopes may use custom stacks.
   # scope "/api", HelloPhoenixRest do
   #   pipe_through :api
