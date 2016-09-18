@@ -2,7 +2,7 @@ defmodule HelloPhoenixRest.HelloResource do
   use PhoenixRest.Resource
 
   def allowed_methods(conn, state) do
-    {["GET", "HEAD", "OPTIONS"], conn, state}
+    {["GET", "HEAD", "OPTIONS", "TRACE"], conn, state}
   end
 
   def content_types_provided(conn, state) do

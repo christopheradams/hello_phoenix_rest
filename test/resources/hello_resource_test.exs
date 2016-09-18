@@ -14,6 +14,11 @@ defmodule HelloPhoenixRest.HelloResourceTest do
   test "OPTIONS /hello", %{conn: conn} do
     conn = options conn, "/hello"
     assert response(conn, 200)
-    assert (Plug.Conn.get_resp_header(conn, "allow")) == ["GET, HEAD, OPTIONS"]
+    assert (Plug.Conn.get_resp_header(conn, "allow")) == ["GET, HEAD, OPTIONS, TRACE"]
+  end
+
+  test "TRACE /hello", %{conn: conn} do
+    conn = trace conn, "/hello"
+    assert response(conn, 200)
   end
 end
